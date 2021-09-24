@@ -64,13 +64,14 @@ for i in range(len(followers)):
 		total_friends = ""
 		total_followers = ""
 
+		compareDupl = [] 
 		#create for loop here to check relationship between each person
 		for n in range(len(followers)):
 			checkRelationship = True
-			compareDupl = []
 			if n != i:
 				for k in range(len(compareDupl)):
 					if followers[n].screen_name == compareDupl[k]:
+						print("duplicate found: " , compareDupl[k])
 						checkRelationship = False
 				if checkRelationship == True:
 					compareDupl.append(followers[n].screen_name)
@@ -92,8 +93,8 @@ for i in range(len(followers)):
 
 		data['users'].append({
 				'name': followers[i].screen_name,
-				'follower': str(friendship[0].following),
-				'friend': str(friendship[0].followed_by),
+				'follower': str(myFriendship[0].following),
+				'friend': str(myFriendship[0].followed_by),
 				'mutual_followers': total_followers, 
 				'mutual_friends': total_friends 
 			})
@@ -103,6 +104,6 @@ for i in range(len(followers)):
 		time.sleep(900) #wait 15 minutes for more API calls
 
 
-with open('network_data.txt','w') as outfile:
+with open('network_data.json','w') as outfile:
 	json.dump(data, outfile)
 
