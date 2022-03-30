@@ -2,12 +2,9 @@ import tweepy
 import json
 import time
 
-auth = tweepy.OAuthHandler("QcqaHeHWkRZibqsAMfIT89rTR", "Qnz5SRgXMF6WJvkQ6ClnY4Uq2ljhTcr6ibhnEtLTYawOsk1t5q")
-auth.set_access_token("778770992852193280-fEK3GTR0jZMAmrT5JN5r7lvG4eOf6Nk", "ywn2FvqZ3Swh19ltqKS71pAqwKGudRvTV5r10Z43dmfxy")
+auth = tweepy.OAuthHandler("API_KEY", "API_SECRET_KEY")
+auth.set_access_token("", "")
 
-
-#api key "QcqaHeHWkRZibqsAMfIT89rTR"
-#api secret key "Qnz5SRgXMF6WJvkQ6ClnY4Uq2ljhTcr6ibhnEtLTYawOsk1t5q"
 
 api = tweepy.API(auth)
 
