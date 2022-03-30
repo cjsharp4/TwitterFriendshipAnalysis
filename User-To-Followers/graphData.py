@@ -12,9 +12,6 @@ from networkx.readwrite import json_graph
 with open('data.json') as f:
 	data = json.load(f)
 
-#for p in data['users']:
-#	print('Name: ' + p['name'])
-
 G.add_nodes_from(
 	elem['name']
 	for elem in data['users'] 
